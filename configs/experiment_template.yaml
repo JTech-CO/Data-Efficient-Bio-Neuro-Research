@@ -1,0 +1,36 @@
+# Proposed study configuration, not an executable end-to-end training pipeline.
+study:
+  id: replace-with-preregistered-study-id
+  status: design_only
+  target_estimand: REPLACE_ME
+  primary_endpoint: real_cost_to_target_error_and_coverage
+  stop_without_valid_access: true
+information_budget:
+  independent_groups: null
+  new_labels: null
+  assay_budget: null
+  assay_cost_currency: null
+  simulator_calls: null
+  pretraining_exposure: unknown
+splits:
+  group_keys: [donor_id, acquisition_batch]
+  transform_fit_split: train
+  generator_fit_split: train
+  final_test: real_only_locked
+  external_test: preferred_when_available
+  pretraining_overlap_status: unresolved
+models:
+  baseline: [constant, ridge, mechanistic_solver_if_applicable]
+  candidate: [gp]
+  optional_after_baseline: [weak_sindy, ude, frozen_foundation_head, multifidelity]
+acquisition:
+  compare: [random, space_filling, target_information_gain_per_cost]
+  independently_defined_exploration_fraction: null
+  human_approval_required: true
+  safety_policy: externally_approved_allowed_set
+validation:
+  calibration: [coverage, interval_width]
+  performance: [mae, rmse, worst_group_error]
+  mechanism: [identifiability, intervention_rollout]
+  preregistered_thresholds: null
+  no_universal_thresholds_assumed: true

@@ -1,0 +1,17 @@
+flowchart TD
+    A[Authorized raw observations and metadata] --> B[Group / batch / time splits and lineage]
+    B --> C[Observation model and quality checks]
+    C --> D[Simple and mechanistic baselines]
+    C --> E[GP or probabilistic predictor]
+    C --> F[Weak SINDy / UDE / BINN candidates]
+    C --> G[Optional frozen foundation encoder]
+    G --> E
+    D --> H[Calibration / identifiability / external validation]
+    E --> H
+    F --> H
+    H --> I[Target / cost / risk aware query]
+    I --> J[Researcher approval and real measurement]
+    J --> A
+    H --> K[Uncertainty-aware plots and equation cards]
+    L[Versioned simulator] --> M[Separate fidelity and discrepancy model]
+    M --> E

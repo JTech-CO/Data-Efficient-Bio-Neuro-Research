@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research model card contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "model_id",
+    "version",
+    "target",
+    "valid_domain",
+    "observation_operator",
+    "training_manifest",
+    "prior_assumptions",
+    "identifiability_status",
+    "uncertainty_scope",
+    "validation_status",
+    "limitations"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    },
+    "valid_domain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "observation_operator": {
+      "type": "string"
+    },
+    "training_manifest": {
+      "type": "string"
+    },
+    "prior_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "identifiability_status": {
+      "enum": [
+        "unchecked",
+        "not_identifiable",
+        "combinations_only",
+        "checked_for_stated_design"
+      ]
+    },
+    "uncertainty_scope": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "observation",
+          "parameter",
+          "latent_function",
+          "model_discrepancy",
+          "representation"
+        ]
+      }
+    },
+    "validation_status": {
+      "enum": [
+        "not_run",
+        "synthetic_only",
+        "retrospective_real",
+        "prospective_real"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

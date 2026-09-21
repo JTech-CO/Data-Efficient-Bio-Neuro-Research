@@ -1,0 +1,11 @@
+flowchart TD
+    A[Define estimand and independent units] --> B[Authorize and version raw data]
+    B --> C[Split groups before fitted transforms]
+    C --> D[Reproduce strong baselines]
+    D --> E[Paired ablations and uncertainty checks]
+    E --> F{Pass real holdout and failure gates?}
+    F -->|No| G[Reject / simplify / revise assumptions]
+    G --> A
+    F -->|Yes| H[Prospective protocol and human approval]
+    H --> I[New real measurements]
+    I --> J[Audit costs and external validity]

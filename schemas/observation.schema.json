@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observation provenance contract (research template)",
+  "description": "Structural checks do not verify scientific truth, identity, privacy, or complete lineage.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "kind",
+    "independent_group_id",
+    "counts_as_new_biological_unit",
+    "split",
+    "unit",
+    "value",
+    "source_uri",
+    "license_status",
+    "parent_ids"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "real",
+        "simulated",
+        "generated",
+        "imputed",
+        "derived"
+      ]
+    },
+    "independent_group_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "counts_as_new_biological_unit": {
+      "type": "boolean"
+    },
+    "split": {
+      "enum": [
+        "train",
+        "validation",
+        "test",
+        "external_test"
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "source_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "license_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "version",
+        "fit_split",
+        "seed"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "fit_split": {
+          "enum": [
+            "train",
+            "not_fitted",
+            "external_pretraining"
+          ]
+        },
+        "seed": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "real"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "parent_ids": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "enum": [
+              "simulated",
+              "generated",
+              "imputed",
+              "derived"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "producer"
+        ],
+        "properties": {
+          "counts_as_new_biological_unit": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "enum": [
+              "generated",
+              "imputed",
+              "derived"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "parent_ids": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "counts_as_new_biological_unit": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "kind": {
+            "const": "real"
+          },
+          "independent_group_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}
