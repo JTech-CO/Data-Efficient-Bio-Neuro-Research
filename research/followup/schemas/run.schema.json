@@ -1,0 +1,20 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema",
+ "$id":"urn:bio-neuro-research:diagnostic-run:1.2.0",
+ "title":"Synthetic diagnostic research run, not real biological data",
+ "type":"object",
+ "required":["version","world","policy","final_model","diagnosis","audit_history","evaluation","costs","events","snapshots","observations","n_biological_units","result_status"],
+ "properties":{
+  "version":{"const":"1.2.0-research.1"},
+  "result_status":{"const":"completed"},
+  "n_biological_units":{"const":0},
+  "world":{"type":"object","required":["identity","bank","scenario","index","fault_tags"]},
+  "policy":{"enum":["random","reference_first","joint_information","block_targeted","no_reference","reference_first_no_audit"]},
+  "final_model":{"type":"object","required":["rank","mechanism_truth_certified"],"properties":{"mechanism_truth_certified":{"const":false}}},
+  "diagnosis":{"type":"object","required":["causal_source_identified"],"properties":{"causal_source_identified":{"const":false}}},
+  "evaluation":{"type":"object","required":["estimators","test_open_count","freeze_digest"],"properties":{"test_open_count":{"const":1}}},
+  "events":{"type":"array","minItems":5},
+  "observations":{"type":"array","minItems":1,"items":{"type":"object","required":["record_id","action","split","origin","real_world_authorized","cost","replicate_index","counts_as_new_biological_unit"],"properties":{"origin":{"const":"simulated"},"real_world_authorized":{"const":false},"counts_as_new_biological_unit":{"const":false},"split":{"enum":["fit","audit","test"]},"value":{"type":"number"},"cost":{"type":"number","exclusiveMinimum":0},"replicate_index":{"type":"integer","minimum":0}}}}
+ },
+ "additionalProperties":true
+}

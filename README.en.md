@@ -1,3 +1,38 @@
+# Data-efficient bio/neuro AI research | follow-up v1.2.0-research.1
+
+[한국어](README.md) · **English**
+
+Added studies A/B on observations, assumptions and measurement choice, preserving the prior plan and v1.1 executable research.
+
+[Start here](FOLLOWUP.en.md) · [Follow-up viewer](research/followup/web/index.html) · [3,820 evaluation executions](research/docs/en/15_FOLLOWUP_RESULTS.md) · [Next decisions](research/docs/en/16_RESEARCH_DECISIONS.md) · [QA scope](research/followup/quality/QA.md)
+
+The count is 1,900 diagnostic trajectories plus 1,920 acquisition runs, not biological samples. Raw outcomes and failures are included. This is not a production model.
+
+---
+
+## Preserved v1.1 research introduction
+
+# Data-efficient bio/neuro AI research | v1.1.0
+
+[한국어](README.md) · **English** · [Workbench](index.html)
+
+## Added executable research: Closed-loop Research Lab
+
+An **executable synthetic research module** separates observations, assumptions, and intervention decisions while preserving the original plan. No biological data ingestion, clinical validation, or production model is included.
+
+[Setup](research/README.en.md) · [Implementation](research/docs/en/09_IMPLEMENTATION.md) · [504-run pilot](research/docs/en/11_PILOT_RESULTS.md) · [Research direction](research/docs/en/12_RESEARCH_DIRECTION.md) · [Changes](CHANGELOG.md)
+
+```bash
+python -m pip install -r research/requirements.txt
+python -m research.closed_loop serve
+```
+
+Extract the entire repository and open `index.html` for installation-free replay. New computations require the local Python server. Original bilingual chapters 01–08 are unchanged. Inspect the [preservation manifest](research/baseline/manifest.json) and [QA scope](research/quality/QA.md).
+
+---
+
+## Preserved v1.0.0 research introduction
+
 # Data-Efficient Biological and Neural AI Research
 
 [한국어](README.md) · **English**
@@ -57,14 +92,3 @@ python -m unittest discover -s tests -v
 ## Publication and rights
 
 No third-party paper PDFs, datasets or model weights are included. A repository-wide public license is [not yet selected](LICENSE.md), leaving that decision to the owner. See [citation guidance](CITATION.md), [third-party notices](THIRD_PARTY_NOTICES.md), and [validation scope](quality/QA.md). Add accurate owner/author information before publication; do not label the proposed architecture a proved new theory.
-
-
----
-
-## Executable research extension
-
-**1.1.0-research.1 · synthetic-only slice 0.1.0**
-
-The original plan above is preserved. The same repository now adds an executable observation–assumption–intervention loop, bilingual review UI, 640 synthetic comparisons and negative results. This is not a production biological model or validation of the full agenda.
-
-[Extension and setup](RESEARCH_LAB.md) · [Implementation](docs/en/09_EXECUTABLE_RESEARCH.md) · [Actual results](docs/en/10_PILOT_RESULTS.md) · [Next research](docs/en/11_NEXT_RESEARCH.md)

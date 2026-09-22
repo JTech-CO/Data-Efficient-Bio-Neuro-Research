@@ -1,0 +1,4752 @@
+{
+  "version": "1.2.0-research.1",
+  "world": {
+    "bank": "evaluation",
+    "scenario": "mechanism",
+    "index": 20000,
+    "public": {
+      "basis": "tanh",
+      "nominal_sd": 0.12
+    },
+    "theta0": -0.003927843357675931,
+    "theta1": 1.109234222783817,
+    "theta2": -0.3213537674882152,
+    "gain": 1.0,
+    "offset": 0.0,
+    "noise_multiplier": 1.0,
+    "nonlinear": 0.0,
+    "bump_location": 0.3458019798190619,
+    "bump_width": 0.03659362100338834,
+    "bump_height": -0.709228410741742,
+    "identity": "evaluation/mechanism/20000",
+    "fault_tags": {
+      "sensor": false,
+      "mechanism": true,
+      "noise": false
+    },
+    "limitations": {
+      "reference_shared_with_specimen": true,
+      "affine_sensor": true,
+      "known_mechanism_basis": true,
+      "gaussian_homoscedastic_noise": true
+    }
+  },
+  "policy": "no_reference",
+  "public_design": {
+    "basis": "tanh",
+    "nominal_sd": 0.12
+  },
+  "threshold": 0.004166666666666667,
+  "final_model": {
+    "beta": [
+      0.014979793693769006,
+      1.0896683030930823,
+      -0.2772621726021596,
+      1.0,
+      0.0
+    ],
+    "theta_delta": [
+      0.014979793693769006,
+      1.0896683030930823,
+      -0.2772621726021596
+    ],
+    "theta_sd_delta": [
+      0.500610554067878,
+      0.43642208379017966,
+      0.1134960963878755
+    ],
+    "sigma_plugin": 0.0882189696932376,
+    "pure_error_df": 20,
+    "n_fit": 26,
+    "rank": 3,
+    "sample_rank": 3,
+    "reference_rank": 0,
+    "identified_in_declared_linear_likelihood": false,
+    "mechanism_truth_certified": false,
+    "reason": "prior-does-not-repair-data-rank"
+  },
+  "diagnosis": {
+    "threshold": 0.004166666666666667,
+    "flags": {
+      "sensor_affine": false,
+      "sensor_nonlinear": false,
+      "mechanism_lack_of_fit": true,
+      "noise_overdispersion": false
+    },
+    "first_look": {
+      "sensor_affine": null,
+      "sensor_nonlinear": null,
+      "mechanism_lack_of_fit": 1,
+      "noise_overdispersion": null
+    },
+    "label": "mechanism_like_signal",
+    "any_alarm": true,
+    "causal_source_identified": false
+  },
+  "audit_history": [
+    {
+      "p_values": {
+        "sensor_affine": 0.1224240619954637,
+        "sensor_nonlinear": 0.7939675700093269,
+        "mechanism_lack_of_fit": 0.001949053410105109,
+        "noise_overdispersion": 0.7225994580390018
+      },
+      "n_audit": 18,
+      "pure_error_df": 9,
+      "pure_error_variance": 0.00987501950863601,
+      "roles": "audit-not-fit-not-final-test",
+      "no_assumption_certification": true,
+      "fit_cost_at_look": 13.2
+    },
+    {
+      "p_values": {
+        "sensor_affine": 0.13097484172289592,
+        "sensor_nonlinear": 0.401497046186147,
+        "mechanism_lack_of_fit": 3.170857184314472e-08,
+        "noise_overdispersion": 0.838495281953431
+      },
+      "n_audit": 36,
+      "pure_error_df": 27,
+      "pure_error_variance": 0.010567140916047301,
+      "roles": "audit-not-fit-not-final-test",
+      "no_assumption_certification": true,
+      "fit_cost_at_look": 24.4
+    },
+    {
+      "p_values": {
+        "sensor_affine": 0.5317060339894413,
+        "sensor_nonlinear": 0.11411783292236281,
+        "mechanism_lack_of_fit": 9.144492971274096e-12,
+        "noise_overdispersion": 0.6851417309576048
+      },
+      "n_audit": 54,
+      "pure_error_df": 45,
+      "pure_error_variance": 0.012785386606549673,
+      "roles": "audit-not-fit-not-final-test",
+      "no_assumption_certification": true,
+      "fit_cost_at_look": 35.6
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 3.6,
+        "theta_local_information": 2.6481716061686407,
+        "sensor_information": 0.0,
+        "joint_information": 2.992170834326069,
+        "assumed_noise_variance": 0.00728814490933633,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 7.6,
+      "values": [
+        -1.5463744575241278,
+        -1.4706188876980881
+      ],
+      "pre_fit": {
+        "beta": [
+          0.0692581947445829,
+          1.0740582043208002,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.0692581947445829,
+          1.0740582043208002,
+          0.0
+        ],
+        "theta_sd_delta": [
+          0.5025813700821964,
+          0.4317347410762259,
+          0.8
+        ],
+        "sigma_plugin": 0.08537063259304296,
+        "pure_error_df": 2,
+        "n_fit": 4,
+        "rank": 2,
+        "sample_rank": 2,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 3.6,
+        "theta_local_information": 0.4464983558655966,
+        "sensor_information": 0.0,
+        "joint_information": 0.6916400889793265,
+        "assumed_noise_variance": 0.006404406563435862,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 11.2,
+      "values": [
+        0.8255029955283477,
+        0.7584397612785593
+      ],
+      "pre_fit": {
+        "beta": [
+          0.06870782768865244,
+          1.0746312082797709,
+          -0.3343054488429229,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.06870782768865244,
+          1.0746312082797709,
+          -0.3343054488429229
+        ],
+        "theta_sd_delta": [
+          0.5023480026541786,
+          0.4317058407466827,
+          0.14392286774366445
+        ],
+        "sigma_plugin": 0.08002753628243132,
+        "pure_error_df": 3,
+        "n_fit": 6,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 2.0,
+        "theta_local_information": 0.10908283508321048,
+        "sensor_information": 0.0,
+        "joint_information": 0.27952504427966535,
+        "assumed_noise_variance": 0.005711795251866718,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 13.2,
+      "values": [
+        -1.1017183376161719,
+        -1.1057168088937208
+      ],
+      "pre_fit": {
+        "beta": [
+          0.06884746987019252,
+          1.1121335228142444,
+          -0.2844580005769418,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.06884746987019252,
+          1.1121335228142444,
+          -0.2844580005769418
+        ],
+        "theta_sd_delta": [
+          0.5021792783472199,
+          0.44565459789110357,
+          0.11921825034229419
+        ],
+        "sigma_plugin": 0.07557641994608318,
+        "pure_error_df": 4,
+        "n_fit": 8,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 3.6,
+        "theta_local_information": 0.0995196947922814,
+        "sensor_information": 0.0,
+        "joint_information": 0.2693572787233401,
+        "assumed_noise_variance": 0.005505982043709669,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 16.8,
+      "values": [
+        0.6216949543094593,
+        0.6983679336065374
+      ],
+      "pre_fit": {
+        "beta": [
+          0.05161174017294706,
+          1.1207702334356218,
+          -0.27298864176789966,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.05161174017294706,
+          1.1207702334356218,
+          -0.27298864176789966
+        ],
+        "theta_sd_delta": [
+          0.5014062992211578,
+          0.44896512282365025,
+          0.1138880288948004
+        ],
+        "sigma_plugin": 0.07420230484095268,
+        "pure_error_df": 6,
+        "n_fit": 10,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "sample",
+        "x": 0.5,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 2.0,
+        "theta_local_information": 0.07731764376326389,
+        "sensor_information": 0.0,
+        "joint_information": 0.21373678510788247,
+        "assumed_noise_variance": 0.006439537552829344,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 18.8,
+      "values": [
+        0.7617231087648442,
+        0.747899055507714
+      ],
+      "pre_fit": {
+        "beta": [
+          0.047251862588452764,
+          1.1078849785871978,
+          -0.29003592391811417,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.047251862588452764,
+          1.1078849785871978,
+          -0.29003592391811417
+        ],
+        "theta_sd_delta": [
+          0.5014937141388115,
+          0.44383405959527944,
+          0.12054225348864334
+        ],
+        "sigma_plugin": 0.08024672923446378,
+        "pure_error_df": 8,
+        "n_fit": 12,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 2.0,
+        "theta_local_information": 0.04493308120971928,
+        "sensor_information": 0.0,
+        "joint_information": 0.11184837879203453,
+        "assumed_noise_variance": 0.005862811613865584,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 20.8,
+      "values": [
+        0.10653294074837978,
+        -0.05012729839778983
+      ],
+      "pre_fit": {
+        "beta": [
+          0.029171278216749245,
+          1.0990673347824773,
+          -0.2760515740064885,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.029171278216749245,
+          1.0990673347824773,
+          -0.2760515740064885
+        ],
+        "theta_sd_delta": [
+          0.5008702758781697,
+          0.4401695827084216,
+          0.11396016735344505
+        ],
+        "sigma_plugin": 0.07656899903920375,
+        "pure_error_df": 9,
+        "n_fit": 14,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 3.6,
+        "theta_local_information": 0.07938764031962009,
+        "sensor_information": 0.0,
+        "joint_information": 0.1701888477673035,
+        "assumed_noise_variance": 0.006396845251432412,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 24.4,
+      "values": [
+        0.5486501575431544,
+        0.6588812659937782
+      ],
+      "pre_fit": {
+        "beta": [
+          0.028960595068412115,
+          1.0990487194579808,
+          -0.2758900388365586,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.028960595068412115,
+          1.0990487194579808,
+          -0.2758900388365586
+        ],
+        "theta_sd_delta": [
+          0.500774654230925,
+          0.44021108803359493,
+          0.11389143010803655
+        ],
+        "sigma_plugin": 0.07998028039105898,
+        "pure_error_df": 10,
+        "n_fit": 16,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 2.0,
+        "theta_local_information": 0.04291296651676291,
+        "sensor_information": 0.0,
+        "joint_information": 0.15851426452608702,
+        "assumed_noise_variance": 0.007339977138099136,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 26.4,
+      "values": [
+        1.305723924425469,
+        1.1175902279747463
+      ],
+      "pre_fit": {
+        "beta": [
+          0.028411061393785506,
+          1.0905032926264788,
+          -0.29104438905486113,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.028411061393785506,
+          1.0905032926264788,
+          -0.29104438905486113
+        ],
+        "theta_sd_delta": [
+          0.5008637844271788,
+          0.4368501190723295,
+          0.11985329001204988
+        ],
+        "sigma_plugin": 0.0856736665382026,
+        "pure_error_df": 12,
+        "n_fit": 18,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 3.6,
+        "theta_local_information": 0.06327212880779953,
+        "sensor_information": 0.0,
+        "joint_information": 0.12482751492385163,
+        "assumed_noise_variance": 0.007818824959618756,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 30.0,
+      "values": [
+        0.7517432899118852,
+        0.6660446269523895
+      ],
+      "pre_fit": {
+        "beta": [
+          0.04255183337118035,
+          1.1015401257259234,
+          -0.30412953588159597,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.04255183337118035,
+          1.1015401257259234,
+          -0.30412953588159597
+        ],
+        "theta_sd_delta": [
+          0.5009471228680379,
+          0.44121395980810685,
+          0.1247258559471919
+        ],
+        "sigma_plugin": 0.0884241197842464,
+        "pure_error_df": 14,
+        "n_fit": 20,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "sample",
+        "x": 0.5,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 2.0,
+        "theta_local_information": 0.03451796486119463,
+        "sensor_information": 0.0,
+        "joint_information": 0.0959019617740569,
+        "assumed_noise_variance": 0.007200635931277148,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 32.0,
+      "values": [
+        0.6972281318226856,
+        0.5141365105312671
+      ],
+      "pre_fit": {
+        "beta": [
+          0.04244039884353348,
+          1.1026539892529659,
+          -0.30171554783849963,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.04244039884353348,
+          1.1026539892529659,
+          -0.30171554783849963
+        ],
+        "theta_sd_delta": [
+          0.5008935208008621,
+          0.44159727482614936,
+          0.12328918909254243
+        ],
+        "sigma_plugin": 0.08485656092063329,
+        "pure_error_df": 16,
+        "n_fit": 22,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    {
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "selection": {
+        "reason": "weighted-local-block-information-per-cost",
+        "cost": 3.6,
+        "theta_local_information": 0.04983267301909944,
+        "sensor_information": 0.0,
+        "joint_information": 0.09948235208246985,
+        "assumed_noise_variance": 0.00843060525009028,
+        "is_exact_mutual_information_for_theta": false
+      },
+      "spent_after": 35.6,
+      "values": [
+        0.6600635411924644,
+        0.7317419352272918
+      ],
+      "pre_fit": {
+        "beta": [
+          0.015039779399191072,
+          1.0892982045237245,
+          -0.2780942127398003,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.015039779399191072,
+          1.0892982045237245,
+          -0.2780942127398003
+        ],
+        "theta_sd_delta": [
+          0.5006589800332539,
+          0.43633052094699537,
+          0.11425053750989701
+        ],
+        "sigma_plugin": 0.09181832741936809,
+        "pure_error_df": 18,
+        "n_fit": 24,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    }
+  ],
+  "evaluation": {
+    "estimators": {
+      "propagated": {
+        "latent": {
+          "rmse": 0.0559564503474675,
+          "coverage_95": 1.0,
+          "width_95": 2.3143921711731696,
+          "nll_gaussian": 0.3885187904870405
+        },
+        "observed": {
+          "rmse": 0.12360548002558792,
+          "coverage_95": 0.8536585365853658,
+          "width_95": 0.3641688620867616,
+          "nll_gaussian": -0.5729629364374058
+        },
+        "interval_type": "conditional-Gaussian-delta-not-formal-coverage"
+      },
+      "plugin_calibration": {
+        "latent": {
+          "rmse": 0.0559564503474675,
+          "coverage_95": 0.5,
+          "width_95": 0.11171254185578015,
+          "nll_gaussian": -0.7715340820472367
+        },
+        "observed": {
+          "rmse": 0.12360548002558792,
+          "coverage_95": 0.8536585365853658,
+          "width_95": 0.3641688620867616,
+          "nll_gaussian": -0.5729629364374058
+        },
+        "interval_type": "conditional-Gaussian-delta-not-formal-coverage"
+      },
+      "nominal_noise": {
+        "latent": {
+          "rmse": 0.05606223195827836,
+          "coverage_95": 1.0,
+          "width_95": 2.3166386296188137,
+          "nll_gaussian": 0.3894805088493142
+        },
+        "observed": {
+          "rmse": 0.12367297976259847,
+          "coverage_95": 0.9634146341463414,
+          "width_95": 0.49534986907043016,
+          "nll_gaussian": -0.6712912292242236
+        },
+        "interval_type": "conditional-Gaussian-delta-not-formal-coverage"
+      },
+      "identity_baseline": {
+        "latent": {
+          "rmse": 0.05583220848491491,
+          "coverage_95": 0.5,
+          "width_95": 0.1117427163726597,
+          "nll_gaussian": -0.7792595238223872
+        },
+        "known_wrong_units_possible": true
+      },
+      "oracle_affine_calibration": {
+        "latent": {
+          "rmse": 0.0559564503474675,
+          "coverage_95": 0.5,
+          "width_95": 0.11171254185578015,
+          "nll_gaussian": -0.7715340820472367
+        },
+        "privileged_evaluator_only": true
+      }
+    },
+    "frozen_prefix_evaluations": {
+      "look_1": {
+        "latent": {
+          "rmse": 0.09143512230516956,
+          "coverage_95": 1.0,
+          "width_95": 2.3280524506536904,
+          "nll_gaussian": 0.40271895124250645
+        },
+        "fit_cost": 13.2,
+        "audit_cost": 25.8
+      },
+      "look_2": {
+        "latent": {
+          "rmse": 0.056326850019128974,
+          "coverage_95": 1.0,
+          "width_95": 2.316034034352134,
+          "nll_gaussian": 0.3892627374347534
+        },
+        "fit_cost": 24.4,
+        "audit_cost": 51.6
+      },
+      "look_3": {
+        "latent": {
+          "rmse": 0.0559564503474675,
+          "coverage_95": 1.0,
+          "width_95": 2.3143921711731696,
+          "nll_gaussian": 0.3885187904870405
+        },
+        "fit_cost": 35.6,
+        "audit_cost": 77.4
+      },
+      "final": {
+        "latent": {
+          "rmse": 0.0559564503474675,
+          "coverage_95": 1.0,
+          "width_95": 2.3143921711731696,
+          "nll_gaussian": 0.3885187904870405
+        },
+        "fit_cost": 35.6,
+        "audit_cost": 77.4
+      }
+    },
+    "curves": {
+      "x": [
+        -1.0,
+        -0.95,
+        -0.9,
+        -0.85,
+        -0.8,
+        -0.75,
+        -0.7,
+        -0.6499999999999999,
+        -0.6,
+        -0.55,
+        -0.5,
+        -0.44999999999999996,
+        -0.3999999999999999,
+        -0.35,
+        -0.29999999999999993,
+        -0.25,
+        -0.19999999999999996,
+        -0.1499999999999999,
+        -0.09999999999999998,
+        -0.04999999999999993,
+        0.0,
+        0.050000000000000044,
+        0.10000000000000009,
+        0.15000000000000013,
+        0.20000000000000018,
+        0.25,
+        0.30000000000000004,
+        0.3500000000000001,
+        0.40000000000000013,
+        0.4500000000000002,
+        0.5,
+        0.55,
+        0.6000000000000001,
+        0.6500000000000001,
+        0.7000000000000002,
+        0.75,
+        0.8,
+        0.8500000000000001,
+        0.9000000000000001,
+        0.9500000000000002,
+        1.0,
+        -1.0,
+        -0.95,
+        -0.9,
+        -0.85,
+        -0.8,
+        -0.75,
+        -0.7,
+        -0.6499999999999999,
+        -0.6,
+        -0.55,
+        -0.5,
+        -0.44999999999999996,
+        -0.3999999999999999,
+        -0.35,
+        -0.29999999999999993,
+        -0.25,
+        -0.19999999999999996,
+        -0.1499999999999999,
+        -0.09999999999999998,
+        -0.04999999999999993,
+        0.0,
+        0.050000000000000044,
+        0.10000000000000009,
+        0.15000000000000013,
+        0.20000000000000018,
+        0.25,
+        0.30000000000000004,
+        0.3500000000000001,
+        0.40000000000000013,
+        0.4500000000000002,
+        0.5,
+        0.55,
+        0.6000000000000001,
+        0.6500000000000001,
+        0.7000000000000002,
+        0.75,
+        0.8,
+        0.8500000000000001,
+        0.9000000000000001,
+        0.9500000000000002,
+        1.0
+      ],
+      "u": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "truth_latent": [
+        -1.113162066141493,
+        -1.0953793729827765,
+        -1.0750560431368343,
+        -1.0518869446057342,
+        -1.0255485738353687,
+        -0.9957039860928492,
+        -0.9620099740556405,
+        -0.9241268544053666,
+        -0.8817311293193318,
+        -0.8345311161609736,
+        -0.7822853684550939,
+        -0.7248233391381412,
+        -0.6620672770323481,
+        -0.5940538411369418,
+        -0.5209534392169937,
+        -0.4430849523039681,
+        -0.3609234161366792,
+        -0.275098503379107,
+        -0.18638234613142732,
+        -0.09566632982462803,
+        -0.003927843357675931,
+        0.08781064310927635,
+        0.17852665941607565,
+        0.26724281666375554,
+        0.35306772942132775,
+        0.43522926558861624,
+        0.513097752501642,
+        0.5861981544215901,
+        0.6542115903169966,
+        0.7169676524227897,
+        0.774429681739742,
+        0.8266754294456218,
+        0.8738754426039802,
+        0.9162711676900149,
+        0.9541542873402887,
+        0.9878482993774973,
+        1.0176928871200168,
+        1.0440312578903823,
+        1.0672003564214825,
+        1.087523686267425,
+        1.105306379426141,
+        -1.5951927173738158,
+        -1.5722995353511775,
+        -1.5462367079743775,
+        -1.5166560324017477,
+        -1.4831993340480925,
+        -1.445507778808947,
+        -1.4032342534688065,
+        -1.356059047970233,
+        -1.3037088288818666,
+        -1.2459785282004396,
+        -1.1827552843987865,
+        -1.1140429895816566,
+        -1.0399853821701508,
+        -0.9608850869147678,
+        -0.8772156889827765,
+        -0.7896239957873887,
+        -0.6989202191559534,
+        -0.6060549468742776,
+        -0.5120833779843498,
+        -0.41811912851164584,
+        -0.32528161084589113,
+        -0.23464215557774148,
+        -0.14717437243684678,
+        -0.06371362683141507,
+        0.015070926402053542,
+        0.08869022210519556,
+        0.15683550273585917,
+        0.219366908643764,
+        0.27629348517919383,
+        0.3277480019792743,
+        0.3739597657960495,
+        0.4152280174061558,
+        0.4518977430414453,
+        0.48433897412514837,
+        0.5129300079271227,
+        0.5380445066613995,
+        0.560042126907293,
+        0.5792621700943688,
+        0.5960196915839393,
+        0.610603523899024,
+        0.6232757281938183
+      ],
+      "mean_latent": [
+        -1.0746885093993133,
+        -1.0572194873653078,
+        -1.0372546432489314,
+        -1.0144942273133144,
+        -0.9886204423235649,
+        -0.959302286956624,
+        -0.9262026077663807,
+        -0.8889877131505379,
+        -0.8473398115045174,
+        -0.8009723652178704,
+        -0.7496481867196465,
+        -0.6931997372470485,
+        -0.6315506370849531,
+        -0.5647368985999645,
+        -0.4929259237135031,
+        -0.4164309686750673,
+        -0.3357186900093024,
+        -0.251407653506165,
+        -0.16425637153218756,
+        -0.07514050626045793,
+        0.014979793693769006,
+        0.10510009364799612,
+        0.19421595891972576,
+        0.28136724089370346,
+        0.3656782773968407,
+        0.4463905560626053,
+        0.5228855111010413,
+        0.5946964859875027,
+        0.6615102244724914,
+        0.723159324634587,
+        0.7796077741071845,
+        0.8309319526054084,
+        0.8772993988920557,
+        0.9189473005380762,
+        0.9561621951539189,
+        0.989261874344162,
+        1.018580029711103,
+        1.0444538147008526,
+        1.0672142306364694,
+        1.087179074752846,
+        1.1046480967868513,
+        -1.4905817683025526,
+        -1.468703446024317,
+        -1.4437865966226477,
+        -1.4154943090857253,
+        -1.3834788722134932,
+        -1.3473903986596563,
+        -1.306888364996232,
+        -1.26165631243498,
+        -1.2114197309181287,
+        -1.1559668134400523,
+        -1.095171314779517,
+        -1.029016201279572,
+        -0.9576161931704007,
+        -0.881236776531057,
+        -0.8003069329926819,
+        -0.7154228517909577,
+        -0.6273403774418135,
+        -0.5369549594468679,
+        -0.44526933869342716,
+        -0.3533509166266224,
+        -0.26228237890839057,
+        -0.17311031671816834,
+        -0.08679700824151386,
+        -0.004180065046999367,
+        0.07405658996432962,
+        0.14739867294671488,
+        0.21550450182186243,
+        0.27819660805641006,
+        0.3354446683870437,
+        0.38734286060206335,
+        0.43408464604731406,
+        0.4759375043832265,
+        0.5132194794784443,
+        0.5462787012536341,
+        0.5754764379240678,
+        0.6011737626411298,
+        0.6237215998211747,
+        0.6434537329284419,
+        0.660682277262753,
+        0.6756951160938369,
+        0.6887548378836119
+      ],
+      "sd_latent": [
+        0.6603377647448726,
+        0.655796221260313,
+        0.6506591309530925,
+        0.6448737504456482,
+        0.6383914159431425,
+        0.6311713101987185,
+        0.6231853245264523,
+        0.614424115535402,
+        0.6049043634131813,
+        0.5946770790788147,
+        0.583836560908512,
+        0.5725292520082429,
+        0.5609612957881651,
+        0.5494030658816837,
+        0.5381884563235934,
+        0.5277064584641471,
+        0.5183828350145985,
+        0.5106508984896241,
+        0.504912743704802,
+        0.5014955306050622,
+        0.500610554067878,
+        0.5023242382410273,
+        0.5065484708685692,
+        0.5130529034287918,
+        0.5214958818513484,
+        0.5314662058648902,
+        0.542526624120951,
+        0.554251673385931,
+        0.5662556854841697,
+        0.5782099398044303,
+        0.5898501321719953,
+        0.6009764012416922,
+        0.6114483618040325,
+        0.621177304120312,
+        0.6301172251994334,
+        0.6382558457920864,
+        0.6456063264901727,
+        0.6522000581999935,
+        0.6580806645686101,
+        0.6632992006748115,
+        0.6679104435323392,
+        0.7794136026969462,
+        0.7727090517540365,
+        0.7651244167952467,
+        0.7565802145682805,
+        0.7470017105890498,
+        0.7363237514517769,
+        0.7244968890152566,
+        0.7114948453203152,
+        0.6973232304554053,
+        0.6820292169590976,
+        0.665711583206448,
+        0.6485301651092384,
+        0.6307133220666871,
+        0.6125615863977306,
+        0.5944453350997023,
+        0.5767942766267887,
+        0.5600770279475039,
+        0.5447703280053927,
+        0.5313196238747581,
+        0.5200956347916093,
+        0.5113542098555663,
+        0.505207993116085,
+        0.5016168671048395,
+        0.5003997637797657,
+        0.5012647582665568,
+        0.5038498675120039,
+        0.5077654781863297,
+        0.5126309076793993,
+        0.5181008925512613,
+        0.5238811286413527,
+        0.5297343031445224,
+        0.5354791265142549,
+        0.5409849759751695,
+        0.5461643335233474,
+        0.5509645923486307,
+        0.5553602271383035,
+        0.5593458663477614,
+        0.5629304848236554,
+        0.5661327343983544,
+        0.5689773184423366,
+        0.5714922651972685
+      ]
+    },
+    "test_open_count": 1,
+    "freeze_digest": "5813607023f3357e0f797b6ef6c025caf7909867c478ad32a487ae8cf1435e7d"
+  },
+  "costs": {
+    "fit_cost": 35.6,
+    "audit_cost": 77.4,
+    "test_cost": 114.8,
+    "n_simulated": 162,
+    "n_biological_units": 0,
+    "cost_unit": "synthetic_measurement_unit",
+    "acquisition_cost": 113.0,
+    "all_measurement_cost": 227.8
+  },
+  "events": [
+    {
+      "index": 0,
+      "type": "start",
+      "payload": {
+        "version": "1.2.0-research.1",
+        "synthetic_only": true,
+        "policy": "no_reference",
+        "public_design": {
+          "basis": "tanh",
+          "nominal_sd": 0.12
+        },
+        "fit_budget": 36.0,
+        "planned_acquisition_cap": 113.4
+      },
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "8aafef3976c03622cc77b07aa504af23e020cb367f0da6616e7b7d0a4eb0ae7b"
+    },
+    {
+      "index": 1,
+      "type": "initial_measurement",
+      "payload": {
+        "action": {
+          "kind": "sample",
+          "x": -1.0,
+          "n": 2
+        },
+        "cost": 2.0
+      },
+      "previous": "8aafef3976c03622cc77b07aa504af23e020cb367f0da6616e7b7d0a4eb0ae7b",
+      "hash": "3b369b24fdc83af6fdf9321cc53eb52c52a0f66744967ad7b726e6a784feedd6"
+    },
+    {
+      "index": 2,
+      "type": "initial_measurement",
+      "payload": {
+        "action": {
+          "kind": "sample",
+          "x": 1.0,
+          "n": 2
+        },
+        "cost": 2.0
+      },
+      "previous": "3b369b24fdc83af6fdf9321cc53eb52c52a0f66744967ad7b726e6a784feedd6",
+      "hash": "30172382e9c93bd062482c3b6715323da95ee7961d36c3537d82b0f2476ead3f"
+    },
+    {
+      "index": 3,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "intervention",
+          "x": -1.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 3.6,
+          "theta_local_information": 2.6481716061686407,
+          "sensor_information": 0.0,
+          "joint_information": 2.992170834326069,
+          "assumed_noise_variance": 0.00728814490933633,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "30172382e9c93bd062482c3b6715323da95ee7961d36c3537d82b0f2476ead3f",
+      "hash": "7bed17f2efff5b19b2ba9993181909a86a39544591c472f9ac4ee02317f2a76b"
+    },
+    {
+      "index": 4,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "7bed17f2efff5b19b2ba9993181909a86a39544591c472f9ac4ee02317f2a76b",
+      "hash": "3d3bf73c8b6bc7607ac5b5d759c882f5d70c3002dd1200b9948c72215f803f73"
+    },
+    {
+      "index": 5,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:intervention:-1.00000000:0",
+          "evaluation/mechanism/20000:fit:intervention:-1.00000000:1"
+        ],
+        "cost": 3.6
+      },
+      "previous": "3d3bf73c8b6bc7607ac5b5d759c882f5d70c3002dd1200b9948c72215f803f73",
+      "hash": "3853f7969c1bd16ca7efdaefb61edfa96c13a3ba10dac7e99b37dc318368d996"
+    },
+    {
+      "index": 6,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "intervention",
+          "x": 1.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 3.6,
+          "theta_local_information": 0.4464983558655966,
+          "sensor_information": 0.0,
+          "joint_information": 0.6916400889793265,
+          "assumed_noise_variance": 0.006404406563435862,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "3853f7969c1bd16ca7efdaefb61edfa96c13a3ba10dac7e99b37dc318368d996",
+      "hash": "5bd6f80dc9411d8c940dcb70d73ae2351df40717982c2d3f092dd416f334c024"
+    },
+    {
+      "index": 7,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "5bd6f80dc9411d8c940dcb70d73ae2351df40717982c2d3f092dd416f334c024",
+      "hash": "6c78c28a59dbfb79947cc6c93bfe26f98d0c1c27d0b39a5a2e5ddc620a47bec7"
+    },
+    {
+      "index": 8,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:1"
+        ],
+        "cost": 3.6
+      },
+      "previous": "6c78c28a59dbfb79947cc6c93bfe26f98d0c1c27d0b39a5a2e5ddc620a47bec7",
+      "hash": "cd3816e8751ba9756fff412db9276092c310c3c3d9a2fc95e9ba38cbca16f65c"
+    },
+    {
+      "index": 9,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "sample",
+          "x": -1.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 2.0,
+          "theta_local_information": 0.10908283508321048,
+          "sensor_information": 0.0,
+          "joint_information": 0.27952504427966535,
+          "assumed_noise_variance": 0.005711795251866718,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "cd3816e8751ba9756fff412db9276092c310c3c3d9a2fc95e9ba38cbca16f65c",
+      "hash": "aab97b21f07d8474fb0380a822c17ea50706a54c53b3a0e3230356d231986cea"
+    },
+    {
+      "index": 10,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "aab97b21f07d8474fb0380a822c17ea50706a54c53b3a0e3230356d231986cea",
+      "hash": "eab6c159339a6e6645e7d48b3007aff466d2f46b52c9f67dbe560785320cf14b"
+    },
+    {
+      "index": 11,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:sample:-1.00000000:2",
+          "evaluation/mechanism/20000:fit:sample:-1.00000000:3"
+        ],
+        "cost": 2.0
+      },
+      "previous": "eab6c159339a6e6645e7d48b3007aff466d2f46b52c9f67dbe560785320cf14b",
+      "hash": "8528c84a79d5027789c7a641dfd0851857ab4eda4aa322331855fa601f5a0500"
+    },
+    {
+      "index": 12,
+      "type": "diagnostic_look",
+      "payload": {
+        "look": 1,
+        "diagnosis": {
+          "threshold": 0.004166666666666667,
+          "flags": {
+            "sensor_affine": false,
+            "sensor_nonlinear": false,
+            "mechanism_lack_of_fit": true,
+            "noise_overdispersion": false
+          },
+          "first_look": {
+            "sensor_affine": null,
+            "sensor_nonlinear": null,
+            "mechanism_lack_of_fit": 1,
+            "noise_overdispersion": null
+          },
+          "label": "mechanism_like_signal",
+          "any_alarm": true,
+          "causal_source_identified": false
+        },
+        "n_audit": 18
+      },
+      "previous": "8528c84a79d5027789c7a641dfd0851857ab4eda4aa322331855fa601f5a0500",
+      "hash": "31718cfb148df049c3a7f126008cd7c44aca83d85ff282c6006a5b2f46e9c815"
+    },
+    {
+      "index": 13,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "intervention",
+          "x": 1.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 3.6,
+          "theta_local_information": 0.0995196947922814,
+          "sensor_information": 0.0,
+          "joint_information": 0.2693572787233401,
+          "assumed_noise_variance": 0.005505982043709669,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "31718cfb148df049c3a7f126008cd7c44aca83d85ff282c6006a5b2f46e9c815",
+      "hash": "e73ecb8fb2b34683e53df0e4ba27c7d10a6b65597bc26cb89b547b5ffcec84d8"
+    },
+    {
+      "index": 14,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "e73ecb8fb2b34683e53df0e4ba27c7d10a6b65597bc26cb89b547b5ffcec84d8",
+      "hash": "75efa6a0fb3cc9f97d3a84c847e6a5135bfef4ef98aafdd4ca939b06d72c4f78"
+    },
+    {
+      "index": 15,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:2",
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:3"
+        ],
+        "cost": 3.6
+      },
+      "previous": "75efa6a0fb3cc9f97d3a84c847e6a5135bfef4ef98aafdd4ca939b06d72c4f78",
+      "hash": "4c4b0e194b31d7f7bb958019267dddf3c1f44f279de410fba2bbb159462ec9ea"
+    },
+    {
+      "index": 16,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "sample",
+          "x": 0.5,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 2.0,
+          "theta_local_information": 0.07731764376326389,
+          "sensor_information": 0.0,
+          "joint_information": 0.21373678510788247,
+          "assumed_noise_variance": 0.006439537552829344,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "4c4b0e194b31d7f7bb958019267dddf3c1f44f279de410fba2bbb159462ec9ea",
+      "hash": "1d32c6fad2b51ad13d5928feab5225a1c293818b822e6e820ecde26b266a9795"
+    },
+    {
+      "index": 17,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "1d32c6fad2b51ad13d5928feab5225a1c293818b822e6e820ecde26b266a9795",
+      "hash": "b2875058ca4dc779d970035335011d6c119e78823841be295476d08cce714f4a"
+    },
+    {
+      "index": 18,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:sample:0.50000000:0",
+          "evaluation/mechanism/20000:fit:sample:0.50000000:1"
+        ],
+        "cost": 2.0
+      },
+      "previous": "b2875058ca4dc779d970035335011d6c119e78823841be295476d08cce714f4a",
+      "hash": "3b5770cc7badeaa14bb469ba8b0d372bcdc9f32b7f5feb4f0b715c49460bcca4"
+    },
+    {
+      "index": 19,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "sample",
+          "x": 0.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 2.0,
+          "theta_local_information": 0.04493308120971928,
+          "sensor_information": 0.0,
+          "joint_information": 0.11184837879203453,
+          "assumed_noise_variance": 0.005862811613865584,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "3b5770cc7badeaa14bb469ba8b0d372bcdc9f32b7f5feb4f0b715c49460bcca4",
+      "hash": "3127990c757be82882997a75c7e791837a7d2ef1dd26fc0a10ae9e19c1065eff"
+    },
+    {
+      "index": 20,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "3127990c757be82882997a75c7e791837a7d2ef1dd26fc0a10ae9e19c1065eff",
+      "hash": "23936a0aaf1d3694c568c111ea202e319172ffba46b5972c89674928a42fd161"
+    },
+    {
+      "index": 21,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:sample:0.00000000:0",
+          "evaluation/mechanism/20000:fit:sample:0.00000000:1"
+        ],
+        "cost": 2.0
+      },
+      "previous": "23936a0aaf1d3694c568c111ea202e319172ffba46b5972c89674928a42fd161",
+      "hash": "6d7a45568629b91fe57cbd0afa9a920ab7672fcf2ac1b1bff2b17e905a57ce9b"
+    },
+    {
+      "index": 22,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "intervention",
+          "x": 1.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 3.6,
+          "theta_local_information": 0.07938764031962009,
+          "sensor_information": 0.0,
+          "joint_information": 0.1701888477673035,
+          "assumed_noise_variance": 0.006396845251432412,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "6d7a45568629b91fe57cbd0afa9a920ab7672fcf2ac1b1bff2b17e905a57ce9b",
+      "hash": "5646d3e9faca3ed82e76f5538720695013f7d54e91c84fc0e306fe3cb5be7db7"
+    },
+    {
+      "index": 23,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "5646d3e9faca3ed82e76f5538720695013f7d54e91c84fc0e306fe3cb5be7db7",
+      "hash": "7adcc38cfa6ef9443e1258f2d3170f230c9bcd0835b60e9b1fee78e035920c4f"
+    },
+    {
+      "index": 24,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:4",
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:5"
+        ],
+        "cost": 3.6
+      },
+      "previous": "7adcc38cfa6ef9443e1258f2d3170f230c9bcd0835b60e9b1fee78e035920c4f",
+      "hash": "35ec6d8e2195a14fc6e5819a059e27e56cd9296802ec4d4affa7177cbbaa55e9"
+    },
+    {
+      "index": 25,
+      "type": "diagnostic_look",
+      "payload": {
+        "look": 2,
+        "diagnosis": {
+          "threshold": 0.004166666666666667,
+          "flags": {
+            "sensor_affine": false,
+            "sensor_nonlinear": false,
+            "mechanism_lack_of_fit": true,
+            "noise_overdispersion": false
+          },
+          "first_look": {
+            "sensor_affine": null,
+            "sensor_nonlinear": null,
+            "mechanism_lack_of_fit": 1,
+            "noise_overdispersion": null
+          },
+          "label": "mechanism_like_signal",
+          "any_alarm": true,
+          "causal_source_identified": false
+        },
+        "n_audit": 36
+      },
+      "previous": "35ec6d8e2195a14fc6e5819a059e27e56cd9296802ec4d4affa7177cbbaa55e9",
+      "hash": "7441716f60727cc2efc52f00e22c8c19bbbe4eb1d907da4b3a7517fb247dcb28"
+    },
+    {
+      "index": 26,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "sample",
+          "x": 1.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 2.0,
+          "theta_local_information": 0.04291296651676291,
+          "sensor_information": 0.0,
+          "joint_information": 0.15851426452608702,
+          "assumed_noise_variance": 0.007339977138099136,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "7441716f60727cc2efc52f00e22c8c19bbbe4eb1d907da4b3a7517fb247dcb28",
+      "hash": "8637e862a368e230043a4a62f01759cfd4cd5528f609959cf008ce9a5e823067"
+    },
+    {
+      "index": 27,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "8637e862a368e230043a4a62f01759cfd4cd5528f609959cf008ce9a5e823067",
+      "hash": "fc15c824002858e738f79bb0a2d900503da5c3cda9c59c7f33aaeac534aca1fe"
+    },
+    {
+      "index": 28,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:sample:1.00000000:2",
+          "evaluation/mechanism/20000:fit:sample:1.00000000:3"
+        ],
+        "cost": 2.0
+      },
+      "previous": "fc15c824002858e738f79bb0a2d900503da5c3cda9c59c7f33aaeac534aca1fe",
+      "hash": "c3c121e3f6372af4ed5efb0eee76daa13db95677b3762a955928286271e001bc"
+    },
+    {
+      "index": 29,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "intervention",
+          "x": 1.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 3.6,
+          "theta_local_information": 0.06327212880779953,
+          "sensor_information": 0.0,
+          "joint_information": 0.12482751492385163,
+          "assumed_noise_variance": 0.007818824959618756,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "c3c121e3f6372af4ed5efb0eee76daa13db95677b3762a955928286271e001bc",
+      "hash": "c7fcad3c12ed7db4c0925dd5fdbd0d8503e791dd8cb192a69e93722c1237a055"
+    },
+    {
+      "index": 30,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "c7fcad3c12ed7db4c0925dd5fdbd0d8503e791dd8cb192a69e93722c1237a055",
+      "hash": "783f8d5c51c1c3d774baf448ad5629c3ab39ccdc0a7bb2bd72a7a38f4190f560"
+    },
+    {
+      "index": 31,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:6",
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:7"
+        ],
+        "cost": 3.6
+      },
+      "previous": "783f8d5c51c1c3d774baf448ad5629c3ab39ccdc0a7bb2bd72a7a38f4190f560",
+      "hash": "e9bdc09ba069ec093dfc252bed0f770037bef79f89806809ff0032b2988cd868"
+    },
+    {
+      "index": 32,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "sample",
+          "x": 0.5,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 2.0,
+          "theta_local_information": 0.03451796486119463,
+          "sensor_information": 0.0,
+          "joint_information": 0.0959019617740569,
+          "assumed_noise_variance": 0.007200635931277148,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "e9bdc09ba069ec093dfc252bed0f770037bef79f89806809ff0032b2988cd868",
+      "hash": "b242c54ee8ef2a85b6690125dba2c62404cea20ec3330e0c27dde552534c54b5"
+    },
+    {
+      "index": 33,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "b242c54ee8ef2a85b6690125dba2c62404cea20ec3330e0c27dde552534c54b5",
+      "hash": "80cbd7a41a88e1e9de5478d7759653f9576ff95f4009a8962d2530a01a9f1bdb"
+    },
+    {
+      "index": 34,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:sample:0.50000000:2",
+          "evaluation/mechanism/20000:fit:sample:0.50000000:3"
+        ],
+        "cost": 2.0
+      },
+      "previous": "80cbd7a41a88e1e9de5478d7759653f9576ff95f4009a8962d2530a01a9f1bdb",
+      "hash": "84ddfaf9dcac4fbe6220b233bebce1d4e029b7416861821da29942e6455d8f54"
+    },
+    {
+      "index": 35,
+      "type": "propose",
+      "payload": {
+        "action": {
+          "kind": "intervention",
+          "x": 1.0,
+          "n": 2
+        },
+        "selection": {
+          "reason": "weighted-local-block-information-per-cost",
+          "cost": 3.6,
+          "theta_local_information": 0.04983267301909944,
+          "sensor_information": 0.0,
+          "joint_information": 0.09948235208246985,
+          "assumed_noise_variance": 0.00843060525009028,
+          "is_exact_mutual_information_for_theta": false
+        }
+      },
+      "previous": "84ddfaf9dcac4fbe6220b233bebce1d4e029b7416861821da29942e6455d8f54",
+      "hash": "189bc6c39174253079e8de8f88ddfc5779121be51df5276a219912ebdc69c671"
+    },
+    {
+      "index": 36,
+      "type": "approve",
+      "payload": {
+        "authority": "synthetic-action-allowlist",
+        "real_world_authorized": false
+      },
+      "previous": "189bc6c39174253079e8de8f88ddfc5779121be51df5276a219912ebdc69c671",
+      "hash": "0615b31d77662e2be41b19bd6df932143b07fbe5f95a617f5dd1008cbddb1b54"
+    },
+    {
+      "index": 37,
+      "type": "measure",
+      "payload": {
+        "record_ids": [
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:8",
+          "evaluation/mechanism/20000:fit:intervention:1.00000000:9"
+        ],
+        "cost": 3.6
+      },
+      "previous": "0615b31d77662e2be41b19bd6df932143b07fbe5f95a617f5dd1008cbddb1b54",
+      "hash": "8ec6b1d70d40363ed161270c9af96a06d9fb908581fc133d635772cb826ddc1b"
+    },
+    {
+      "index": 38,
+      "type": "diagnostic_look",
+      "payload": {
+        "look": 3,
+        "diagnosis": {
+          "threshold": 0.004166666666666667,
+          "flags": {
+            "sensor_affine": false,
+            "sensor_nonlinear": false,
+            "mechanism_lack_of_fit": true,
+            "noise_overdispersion": false
+          },
+          "first_look": {
+            "sensor_affine": null,
+            "sensor_nonlinear": null,
+            "mechanism_lack_of_fit": 1,
+            "noise_overdispersion": null
+          },
+          "label": "mechanism_like_signal",
+          "any_alarm": true,
+          "causal_source_identified": false
+        },
+        "n_audit": 54
+      },
+      "previous": "8ec6b1d70d40363ed161270c9af96a06d9fb908581fc133d635772cb826ddc1b",
+      "hash": "342dada34a5bb552f1755a7f777a6e40055790a22d301db177bfa6b1923cf877"
+    },
+    {
+      "index": 39,
+      "type": "freeze",
+      "payload": {
+        "digest": "5813607023f3357e0f797b6ef6c025caf7909867c478ad32a487ae8cf1435e7d"
+      },
+      "previous": "342dada34a5bb552f1755a7f777a6e40055790a22d301db177bfa6b1923cf877",
+      "hash": "3b0e6b3ab0c732a422c1a336d96f51b995506de36c4a3b45409ef0f632952263"
+    },
+    {
+      "index": 40,
+      "type": "final_test",
+      "payload": {
+        "open_count": 1,
+        "freeze_digest": "5813607023f3357e0f797b6ef6c025caf7909867c478ad32a487ae8cf1435e7d"
+      },
+      "previous": "3b0e6b3ab0c732a422c1a336d96f51b995506de36c4a3b45409ef0f632952263",
+      "hash": "99ed07d2e1ba6947adc9f480a1f4468150aea3163f6f51310949f390b497779e"
+    }
+  ],
+  "snapshots": {
+    "look_1": {
+      "n_fit": 10,
+      "fit_cost": 13.2,
+      "audit_cost": 25.8,
+      "model": {
+        "beta": [
+          0.05161174017294706,
+          1.1207702334356218,
+          -0.27298864176789966,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.05161174017294706,
+          1.1207702334356218,
+          -0.27298864176789966
+        ],
+        "theta_sd_delta": [
+          0.5014062992211578,
+          0.44896512282365025,
+          0.1138880288948004
+        ],
+        "sigma_plugin": 0.07420230484095268,
+        "pure_error_df": 6,
+        "n_fit": 10,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    "look_2": {
+      "n_fit": 18,
+      "fit_cost": 24.4,
+      "audit_cost": 51.6,
+      "model": {
+        "beta": [
+          0.028411061393785506,
+          1.0905032926264788,
+          -0.29104438905486113,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.028411061393785506,
+          1.0905032926264788,
+          -0.29104438905486113
+        ],
+        "theta_sd_delta": [
+          0.5008637844271788,
+          0.4368501190723295,
+          0.11985329001204988
+        ],
+        "sigma_plugin": 0.0856736665382026,
+        "pure_error_df": 12,
+        "n_fit": 18,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    "look_3": {
+      "n_fit": 26,
+      "fit_cost": 35.6,
+      "audit_cost": 77.4,
+      "model": {
+        "beta": [
+          0.014979793693769006,
+          1.0896683030930823,
+          -0.2772621726021596,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.014979793693769006,
+          1.0896683030930823,
+          -0.2772621726021596
+        ],
+        "theta_sd_delta": [
+          0.500610554067878,
+          0.43642208379017966,
+          0.1134960963878755
+        ],
+        "sigma_plugin": 0.0882189696932376,
+        "pure_error_df": 20,
+        "n_fit": 26,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    },
+    "final": {
+      "n_fit": 26,
+      "fit_cost": 35.6,
+      "audit_cost": 77.4,
+      "model": {
+        "beta": [
+          0.014979793693769006,
+          1.0896683030930823,
+          -0.2772621726021596,
+          1.0,
+          0.0
+        ],
+        "theta_delta": [
+          0.014979793693769006,
+          1.0896683030930823,
+          -0.2772621726021596
+        ],
+        "theta_sd_delta": [
+          0.500610554067878,
+          0.43642208379017966,
+          0.1134960963878755
+        ],
+        "sigma_plugin": 0.0882189696932376,
+        "pure_error_df": 20,
+        "n_fit": 26,
+        "rank": 3,
+        "sample_rank": 3,
+        "reference_rank": 0,
+        "identified_in_declared_linear_likelihood": false,
+        "mechanism_truth_certified": false,
+        "reason": "prior-does-not-repair-data-rank"
+      }
+    }
+  },
+  "n_biological_units": 0,
+  "result_status": "completed",
+  "first_alarm_look": 1,
+  "observations": [
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:-1.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.0155646234672264,
+      "split": "fit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:-1.00000000:1",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -0.9941930994232924,
+      "split": "fit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:1.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.1513880493571809,
+      "split": "fit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:1.00000000:1",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.1356267919603171,
+      "split": "fit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:-1.00000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.5463744575241278,
+      "split": "fit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:-1.00000000:1",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.4706188876980881,
+      "split": "fit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.8255029955283477,
+      "split": "fit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:1",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.7584397612785593,
+      "split": "fit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:-1.00000000:2",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.1017183376161719,
+      "split": "fit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:-1.00000000:3",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.1057168088937208,
+      "split": "fit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:0",
+      "action": {
+        "kind": "reference",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.0217165812785474,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:1",
+      "action": {
+        "kind": "reference",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -0.831852640048603,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:0.00000000:0",
+      "action": {
+        "kind": "reference",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": 0.00751637632173142,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:0.00000000:1",
+      "action": {
+        "kind": "reference",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": 0.14294901618568903,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:1.00000000:0",
+      "action": {
+        "kind": "reference",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.114428890215075,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:1.00000000:1",
+      "action": {
+        "kind": "reference",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.1345219064125234,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.1030302024693448,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:1",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.1642261054111829,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:0.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.0716981306398817,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:0.00000000:1",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": 0.1407583036188066,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:1.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.146381784338357,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:1.00000000:1",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.9718141103055279,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.6172571948208265,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:1",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.7473125086246835,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.3627778357692899,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:1",
+      "action": {
+        "kind": "intervention",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.29607276000741317,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.6692352564019117,
+      "split": "audit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:1",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.5201185030084169,
+      "split": "audit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:2",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.6216949543094593,
+      "split": "fit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:3",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.6983679336065374,
+      "split": "fit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:0.50000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.5,
+        "n": 2
+      },
+      "value": 0.7617231087648442,
+      "split": "fit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:0.50000000:1",
+      "action": {
+        "kind": "sample",
+        "x": 0.5,
+        "n": 2
+      },
+      "value": 0.747899055507714,
+      "split": "fit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:0.50000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:0.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": 0.10653294074837978,
+      "split": "fit",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:0.00000000:1",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.05012729839778983,
+      "split": "fit",
+      "replicate_index": 1,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:4",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.5486501575431544,
+      "split": "fit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:5",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.6588812659937782,
+      "split": "fit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:2",
+      "action": {
+        "kind": "reference",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.0517850557568915,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:3",
+      "action": {
+        "kind": "reference",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -0.9236502210799602,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:0.00000000:2",
+      "action": {
+        "kind": "reference",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.08245449302730964,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:0.00000000:3",
+      "action": {
+        "kind": "reference",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": 0.024850337100107416,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:1.00000000:2",
+      "action": {
+        "kind": "reference",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.9548519018585071,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:1.00000000:3",
+      "action": {
+        "kind": "reference",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.2981675748113353,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:2",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.0919467024415055,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:3",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.1987194490515418,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:0.00000000:2",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": 0.10310415393009503,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:0.00000000:3",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.01444963278052506,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:1.00000000:2",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.2547918868779413,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:1.00000000:3",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.1995734777604108,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:2",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.5823781416334846,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:3",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.642422549975594,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:2",
+      "action": {
+        "kind": "intervention",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.33793074747753965,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:3",
+      "action": {
+        "kind": "intervention",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.23416641572872804,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:2",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.8480719135446173,
+      "split": "audit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:3",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.5658816654706565,
+      "split": "audit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:1.00000000:2",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.305723924425469,
+      "split": "fit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:1.00000000:3",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.1175902279747463,
+      "split": "fit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:6",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.7517432899118852,
+      "split": "fit",
+      "replicate_index": 6,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:7",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.6660446269523895,
+      "split": "fit",
+      "replicate_index": 7,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:0.50000000:2",
+      "action": {
+        "kind": "sample",
+        "x": 0.5,
+        "n": 2
+      },
+      "value": 0.6972281318226856,
+      "split": "fit",
+      "replicate_index": 2,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:0.50000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:sample:0.50000000:3",
+      "action": {
+        "kind": "sample",
+        "x": 0.5,
+        "n": 2
+      },
+      "value": 0.5141365105312671,
+      "split": "fit",
+      "replicate_index": 3,
+      "parent_id": "evaluation/mechanism/20000:fit:sample:0.50000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:8",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.6600635411924644,
+      "split": "fit",
+      "replicate_index": 8,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:9",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.7317419352272918,
+      "split": "fit",
+      "replicate_index": 9,
+      "parent_id": "evaluation/mechanism/20000:fit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:4",
+      "action": {
+        "kind": "reference",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -0.9169575405549325,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:5",
+      "action": {
+        "kind": "reference",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -0.8629230744852934,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:0.00000000:4",
+      "action": {
+        "kind": "reference",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.08596315517170722,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:0.00000000:5",
+      "action": {
+        "kind": "reference",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.2005986709388461,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:1.00000000:4",
+      "action": {
+        "kind": "reference",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.9202970256918785,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:reference:1.00000000:5",
+      "action": {
+        "kind": "reference",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.9843103595678279,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:reference:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.5,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:4",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.2220145470796289,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:5",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.1232831115574264,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:0.00000000:4",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.002683712317063128,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:0.00000000:5",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": 0.15655296966983226,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:1.00000000:4",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.9770443104398843,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:sample:1.00000000:5",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 1.031216010787147,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:sample:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:4",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.6342921200343241,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:5",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 2
+      },
+      "value": -1.5353973299662647,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:-1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:4",
+      "action": {
+        "kind": "intervention",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.15950113550068343,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:5",
+      "action": {
+        "kind": "intervention",
+        "x": 0.0,
+        "n": 2
+      },
+      "value": -0.5948211656659292,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:0.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:4",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.47909820857647434,
+      "split": "audit",
+      "replicate_index": 4,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:5",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 2
+      },
+      "value": 0.48705270278479407,
+      "split": "audit",
+      "replicate_index": 5,
+      "parent_id": "evaluation/mechanism/20000:audit:intervention:1.00000000:0",
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-1.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -1.0,
+        "n": 1
+      },
+      "value": -1.2570396480236528,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.95000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.95,
+        "n": 1
+      },
+      "value": -1.0815380788381834,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.90000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.9,
+        "n": 1
+      },
+      "value": -0.9749668551673158,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.85000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.85,
+        "n": 1
+      },
+      "value": -1.2137939469481422,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.80000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.8,
+        "n": 1
+      },
+      "value": -0.9758128170025739,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.75000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.75,
+        "n": 1
+      },
+      "value": -0.9949886500413646,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.70000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.7,
+        "n": 1
+      },
+      "value": -0.9969703856698912,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.65000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.6499999999999999,
+        "n": 1
+      },
+      "value": -0.9049424877661602,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.60000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.6,
+        "n": 1
+      },
+      "value": -0.7988171564886313,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.55000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.55,
+        "n": 1
+      },
+      "value": -0.721426532070804,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.50000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.5,
+        "n": 1
+      },
+      "value": -0.7619605998232715,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.45000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.44999999999999996,
+        "n": 1
+      },
+      "value": -0.673224569410554,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.40000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.3999999999999999,
+        "n": 1
+      },
+      "value": -0.6973614260104591,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.35000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.35,
+        "n": 1
+      },
+      "value": -0.5974451739558647,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.30000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.29999999999999993,
+        "n": 1
+      },
+      "value": -0.38095073545322583,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.25000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.25,
+        "n": 1
+      },
+      "value": -0.33785818116990407,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.20000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.19999999999999996,
+        "n": 1
+      },
+      "value": -0.178870614704128,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.15000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.1499999999999999,
+        "n": 1
+      },
+      "value": -0.15466528494277115,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.10000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.09999999999999998,
+        "n": 1
+      },
+      "value": -0.11551782290148628,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:-0.05000000:0",
+      "action": {
+        "kind": "sample",
+        "x": -0.04999999999999993,
+        "n": 1
+      },
+      "value": -0.3151721510432156,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.0,
+        "n": 1
+      },
+      "value": 0.17156278150859705,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.05000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.050000000000000044,
+        "n": 1
+      },
+      "value": 0.12759874682174982,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.10000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.10000000000000009,
+        "n": 1
+      },
+      "value": 0.05965913465773455,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.15000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.15000000000000013,
+        "n": 1
+      },
+      "value": 0.22330807240721373,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.20000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.20000000000000018,
+        "n": 1
+      },
+      "value": 0.33112668352898394,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.25000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.25,
+        "n": 1
+      },
+      "value": 0.452919596402695,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.30000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.30000000000000004,
+        "n": 1
+      },
+      "value": 0.641061079562072,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.35000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.3500000000000001,
+        "n": 1
+      },
+      "value": 0.6859716426984149,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.40000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.40000000000000013,
+        "n": 1
+      },
+      "value": 0.5094756838327826,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.45000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.4500000000000002,
+        "n": 1
+      },
+      "value": 0.6107670764266948,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.50000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.5,
+        "n": 1
+      },
+      "value": 0.7796644692973534,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.55000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.55,
+        "n": 1
+      },
+      "value": 0.9360569243334137,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.60000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.6000000000000001,
+        "n": 1
+      },
+      "value": 0.7900722153580184,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.65000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.6500000000000001,
+        "n": 1
+      },
+      "value": 0.7685277920802138,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.70000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.7000000000000002,
+        "n": 1
+      },
+      "value": 0.9699278642168901,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.75000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.75,
+        "n": 1
+      },
+      "value": 1.0803212084816132,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.80000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.8,
+        "n": 1
+      },
+      "value": 1.0983652542799374,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.85000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.8500000000000001,
+        "n": 1
+      },
+      "value": 0.9882477537404823,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.90000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.9000000000000001,
+        "n": 1
+      },
+      "value": 1.1077769496456211,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:0.95000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 0.9500000000000002,
+        "n": 1
+      },
+      "value": 0.9878690723733655,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:sample:1.00000000:0",
+      "action": {
+        "kind": "sample",
+        "x": 1.0,
+        "n": 1
+      },
+      "value": 1.1320129311344007,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.0,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-1.00000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -1.0,
+        "n": 1
+      },
+      "value": -1.7689488994193776,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.95000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.95,
+        "n": 1
+      },
+      "value": -1.530991044921824,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.90000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.9,
+        "n": 1
+      },
+      "value": -1.4172339523702704,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.85000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.85,
+        "n": 1
+      },
+      "value": -1.677688728707995,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.80000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.8,
+        "n": 1
+      },
+      "value": -1.4976657080407372,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.75000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.75,
+        "n": 1
+      },
+      "value": -1.4490461890268815,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.70000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.7,
+        "n": 1
+      },
+      "value": -1.5581703453677465,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.65000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.6499999999999999,
+        "n": 1
+      },
+      "value": -1.3430140566383908,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.60000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.6,
+        "n": 1
+      },
+      "value": -1.2572748917410592,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.55000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.55,
+        "n": 1
+      },
+      "value": -1.1907905793562947,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.50000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.5,
+        "n": 1
+      },
+      "value": -1.0027771550020654,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.45000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.44999999999999996,
+        "n": 1
+      },
+      "value": -1.1276812264744458,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.40000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.3999999999999999,
+        "n": 1
+      },
+      "value": -0.9555442041907726,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.35000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.35,
+        "n": 1
+      },
+      "value": -0.8531744560989944,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.30000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.29999999999999993,
+        "n": 1
+      },
+      "value": -0.850356486195593,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.25000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.25,
+        "n": 1
+      },
+      "value": -0.8291639620267647,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.20000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.19999999999999996,
+        "n": 1
+      },
+      "value": -0.6836892516561057,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.15000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.1499999999999999,
+        "n": 1
+      },
+      "value": -0.7701290955539362,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.10000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.09999999999999998,
+        "n": 1
+      },
+      "value": -0.6308959226300506,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:-0.05000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": -0.04999999999999993,
+        "n": 1
+      },
+      "value": -0.629092870994103,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.00000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.0,
+        "n": 1
+      },
+      "value": -0.17319559597805403,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.05000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.050000000000000044,
+        "n": 1
+      },
+      "value": -0.2738811775396093,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.10000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.10000000000000009,
+        "n": 1
+      },
+      "value": -0.27153307704019386,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.15000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.15000000000000013,
+        "n": 1
+      },
+      "value": -0.19748270675077706,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.20000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.20000000000000018,
+        "n": 1
+      },
+      "value": -0.02372073595679603,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.25000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.25,
+        "n": 1
+      },
+      "value": 0.07285007348502262,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.30000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.30000000000000004,
+        "n": 1
+      },
+      "value": 0.04556992043990114,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.35000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.3500000000000001,
+        "n": 1
+      },
+      "value": 0.1281268704094381,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.40000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.40000000000000013,
+        "n": 1
+      },
+      "value": 0.19592204228214438,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.45000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.4500000000000002,
+        "n": 1
+      },
+      "value": 0.3654612547698425,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.50000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.5,
+        "n": 1
+      },
+      "value": 0.3950192060908543,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.55000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.55,
+        "n": 1
+      },
+      "value": 0.3258267431757394,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.60000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.6000000000000001,
+        "n": 1
+      },
+      "value": 0.37368856585710414,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.65000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.6500000000000001,
+        "n": 1
+      },
+      "value": 0.38185457820650615,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.70000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.7000000000000002,
+        "n": 1
+      },
+      "value": 0.5413043525704154,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.75000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.75,
+        "n": 1
+      },
+      "value": 0.3987928066616076,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.80000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.8,
+        "n": 1
+      },
+      "value": 0.45499558265436935,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.85000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.8500000000000001,
+        "n": 1
+      },
+      "value": 0.6993615579869661,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.90000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.9000000000000001,
+        "n": 1
+      },
+      "value": 0.42023301244187805,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:0.95000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 0.9500000000000002,
+        "n": 1
+      },
+      "value": 0.5060791892526995,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    },
+    {
+      "record_id": "evaluation/mechanism/20000:test:intervention:1.00000000:0",
+      "action": {
+        "kind": "intervention",
+        "x": 1.0,
+        "n": 1
+      },
+      "value": 0.6031568287813635,
+      "split": "test",
+      "replicate_index": 0,
+      "parent_id": null,
+      "origin": "simulated",
+      "real_world_authorized": false,
+      "cost": 1.8,
+      "counts_as_new_biological_unit": false,
+      "measured_quantity": "dimensionless_sensor_response"
+    }
+  ]
+}

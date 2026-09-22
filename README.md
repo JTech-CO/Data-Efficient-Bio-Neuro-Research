@@ -1,3 +1,38 @@
+# 데이터 효율적 생명·뇌과학 AI 연구 | 후속 v1.2.0-research.1
+
+**한국어** · [English](README.en.md)
+
+관측·가정·측정 선택의 후속 연구 A/B를 추가했다. 이전 계획과 v1.1 실행 코드는 보존했다.
+
+[새 연구 시작](FOLLOWUP.md) · [후속 결과 화면](research/followup/web/index.html) · [3,820개 평가 실행의 결과](research/docs/ko/15_FOLLOWUP_RESULTS.md) · [다음 연구 결정](research/docs/ko/16_RESEARCH_DECISIONS.md) · [검증 범위](research/followup/quality/QA.md)
+
+이 수는 1,900개 진단 궤적 + 1,920개 수집 실행이다. 생물 표본 수는 0이다. 원시 결과와 실패 사례를 포함하며 프로덕션 모델이 아니다.
+
+---
+
+## 아래의 v1.1 연구 안내는 보존된 이전 내용이다
+
+# 데이터 효율적 생명·뇌과학 AI 연구 | v1.1.0
+
+**한국어** · [English](README.en.md) · [실험 화면](index.html)
+
+## 추가된 실행 연구: Closed-loop Research Lab
+
+기존 연구 계획을 보존하고, 관측·가정·개입을 구분하는 **실행 가능한 합성 연구 모듈**을 추가했다. 실제 생물 데이터·임상 검증·프로덕션 모델은 포함하지 않는다.
+
+[설치와 사용](research/README.ko.md) · [구현 명세](research/docs/ko/09_IMPLEMENTATION.md) · [504개 파일럿 결과](research/docs/ko/11_PILOT_RESULTS.md) · [후속 연구 방향](research/docs/ko/12_RESEARCH_DIRECTION.md) · [변경 기록](CHANGELOG.md)
+
+```bash
+python -m pip install -r research/requirements.txt
+python -m research.closed_loop serve
+```
+
+압축을 모두 풀고 `index.html`을 열면 설치 없이 수록 기록을 재생한다. 새 계산은 로컬 Python 서버에서만 실행한다. 기존 01~08 한·영 연구 문서는 변경하지 않았다. [보존 기록](research/baseline/manifest.json)과 [검증 범위](research/quality/QA.md)를 확인한다.
+
+---
+
+## 아래는 보존된 v1.0.0 연구 안내다
+
 # 데이터 효율적 생명·뇌과학 AI 연구
 
 **한국어** · [English](README.en.md)
@@ -57,14 +92,3 @@ python -m unittest discover -s tests -v
 ## 출판과 권리
 
 원논문 PDF·데이터·모델 가중치는 포함하지 않았다. 본 패키지의 공개 라이선스는 사용자가 결정할 수 있도록 [선택 전 상태](LICENSE.md)로 두었다. [인용 안내](CITATION.md), [제3자 자료 안내](THIRD_PARTY_NOTICES.md), [검증 범위](quality/QA.md)를 확인한다. GitHub에 올릴 때 저장소 소유자·저자 정보를 추가하되, 본 설계가 새 이론으로 입증되었다고 표시하지 않는다.
-
-
----
-
-## 실행 가능한 연구 추가 단계 / Executable research extension
-
-**1.1.0-research.1 · synthetic-only slice 0.1.0**
-
-기존 연구 계획은 위 내용대로 보존한다. 같은 저장소에 관측·가정·개입을 분리하는 실행 가능한 연구 루프, 한·영 검토 UI, 640회 합성 비교와 부정 결과를 추가했다. 생물학적 프로덕션 모델이나 전체 가설의 검증 완료가 아니다.
-
-[연구 추가 자료 및 실행 방법](RESEARCH_LAB.md) · [실행 문서](docs/ko/09_EXECUTABLE_RESEARCH.md) · [실제 결과](docs/ko/10_PILOT_RESULTS.md) · [다음 연구 방향](docs/ko/11_NEXT_RESEARCH.md)

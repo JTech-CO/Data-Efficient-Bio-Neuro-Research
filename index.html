@@ -1,1 +1,56 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=research_lab/web/index.html"><title>Closed-loop Research Lab</title></head><body><p><a href="research_lab/web/index.html">Closed-loop Research Lab 열기 / Open research lab</a></p><p><a href="README.md">Original research documentation</a></p></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Observation-aware closed-loop research lab. Executable synthetic experiments; not a biological production model.">
+  <title>Closed-loop Research Lab | Data-Efficient Bio-Neuro Research</title>
+  <link rel="stylesheet" href="lab/css/lab.css">
+</head>
+<body>
+<a href="#main" class="skip-link">본문으로 이동 / Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Research lab home"><span class="brandmark" aria-hidden="true">∴</span><span>Closed-loop <strong>Research Lab</strong></span></a>
+  <div class="top-actions"><span class="version">v1.1.0 · RESEARCH</span><button id="lang-toggle" class="button subtle" type="button">EN</button><a class="button subtle" id="docs-link" href="research/docs/ko/09_IMPLEMENTATION.md" data-i18n="docs">구현 문서</a></div>
+</header>
+<div class="evidence-banner"><span class="status-dot" aria-hidden="true"></span><p data-i18n="scope">합성 실험 전용. 실제 생명·뇌과학 데이터, 임상 검증 또는 프로덕션 모델이 아니다.</p><span id="mode-label" class="mode-tag">정적 기록 보기</span></div>
+<main id="main">
+<section class="intro"><div><p class="eyebrow">DATA-EFFICIENT BIO-NEURO RESEARCH</p><h1 data-i18n="title">관측에서 다음 실험까지</h1><p class="lede" data-i18n="lede">무엇을 측정했는지, 무엇을 가정했는지, 왜 다음 측정을 골랐는지 분리해서 확인한다.</p></div><a href="README.md" id="baseline-link" class="text-link" data-i18n="baseline">기존 연구 계획 읽기 ↗</a></section>
+<nav class="tabs" aria-label="Workspace"><button type="button" class="tab active" data-tab="experiment" data-i18n="tabExperiment">폐루프 실험</button><button type="button" class="tab" data-tab="comparison" data-i18n="tabComparison">정책 비교</button><button type="button" class="tab" data-tab="direction" data-i18n="tabDirection">연구 방향</button></nav>
+<div id="experiment" class="tab-panel">
+<div class="workspace">
+<aside class="setup panel">
+  <div class="section-heading"><span class="step-tag">01</span><h2 data-i18n="designTitle">실험 설계</h2></div>
+  <label for="scenario" data-i18n="scenario">합성 시나리오</label><select id="scenario"></select>
+  <p id="scenario-description" class="field-note"></p>
+  <label for="policy" data-i18n="policy">획득 정책</label><select id="policy"></select>
+  <label for="observation-model" data-i18n="operator">관측 연산자</label><select id="observation-model"><option value="aware">관측 인식 / Aware</option><option value="identity">연산자 무시 / Identity ablation</option></select>
+  <div class="field-grid"><div><label for="seed" data-i18n="seed">시드</label><input id="seed" type="number" min="0" max="4294967295" step="1" value="0"></div><div><label for="budget" data-i18n="budget">학습 비용 상한</label><input id="budget" type="number" min="4" max="64" step="0.25" value="24"></div></div>
+  <button id="load-record" class="button primary full" type="button" data-i18n="load">수록된 실험 보기</button>
+  <button id="run-new" class="button full" type="button" disabled data-i18n="run">새 합성 실험 실행</button>
+  <p id="runner-note" class="field-note" data-i18n="offlineNote">새 계산은 로컬 Python 서버에서 실행한다. 정적 모드에서는 수록된 시드 0 기록을 재생한다.</p>
+  <details class="run-help"><summary data-i18n="localStart">로컬 실행 방법</summary><code>python -m pip install -r research/requirements.txt<br>python -m research.closed_loop serve</code><p data-i18n="localOpen">터미널에 표시된 127.0.0.1 주소를 연다.</p></details>
+  <div class="import-actions"><label class="button subtle full file-label" for="import-json" data-i18n="import">실험 JSON 가져오기</label><input id="import-json" type="file" accept=".json,application/json" hidden><button id="export-run" class="button subtle full" type="button" data-i18n="export">현재 기록 JSON 저장</button></div>
+  <p id="source-status" class="field-note"></p>
+</aside>
+<div class="experiment-body">
+  <section class="panel run-header"><div><p class="eyebrow" data-i18n="activeRun">현재 실행 기록</p><h2 id="run-title">-</h2><p id="run-meta" class="field-note"></p></div><span id="run-state" class="badge">-</span></section>
+  <section class="metrics" aria-label="Metrics"><div class="metric"><span id="metric-rmse-label">진단 RMSE</span><strong id="metric-rmse">-</strong><small id="metric-rmse-note"></small></div><div class="metric"><span id="metric-coverage-label">관측 구간 포함률</span><strong id="metric-coverage">-</strong><small id="metric-width"></small></div><div class="metric"><span data-i18n="trainingCost">학습 측정 비용</span><strong id="metric-cost">-</strong><small id="metric-n"></small></div><div class="metric"><span data-i18n="bioEvidence">독립 생물학적 표본</span><strong>0</strong><small data-i18n="syntheticOnly">모든 기록은 simulated</small></div></section>
+  <section class="panel chart-panel"><div class="chart-heading"><div><h2 data-i18n="chartTitle">관측과 예측의 차이</h2><p class="field-note" id="chart-note"></p></div><label class="compact-select"><span data-i18n="readoutView">측정 채널</span><select id="chart-readout"><option value="sum/none">합산 측정</option></select></label></div><div id="response-chart" class="chart" role="img" aria-label="Observed samples, model predictions and conditional uncertainty"></div><div class="legend"><span><i class="legend-line"></i><span data-i18n="predicted">예측 평균</span></span><span><i class="legend-band"></i><span data-i18n="interval">조건부 잠재 95% 구간</span></span><span><i class="legend-dot"></i><span data-i18n="observed">합성 관측 HF</span></span><span><i class="legend-square"></i><span data-i18n="lowFidelity">합성 관측 LF</span></span><label><input id="show-truth" type="checkbox"><span data-i18n="truth">합성 참값 (최종 동결 후)</span></label></div>
+  <div class="timeline"><div class="play-controls"><button class="button subtle" id="first-step" type="button" aria-label="First step">|‹</button><button class="button subtle" id="prev-step" type="button" aria-label="Previous step">‹</button><button class="button" id="play" type="button" data-i18n="replay">재생</button><button class="button subtle" id="next-step" type="button" aria-label="Next step">›</button><button class="button subtle" id="last-step" type="button" aria-label="Last step">›|</button></div><label class="slider-label" for="step-range"><span id="step-label">0 / 0</span><input id="step-range" type="range" min="0" max="1" value="0"></label></div>
+  <p class="timeline-note" id="timeline-note"></p></section>
+  <section class="lanes" aria-label="Observation assumption intervention separation">
+  <article class="panel lane"><div class="section-heading"><span class="step-tag">O</span><h2 data-i18n="laneObservation">관측</h2></div><p data-i18n="observationNote">측정값과 출처만 기록한다.</p><dl id="observation-detail"></dl></article>
+  <article class="panel lane"><div class="section-heading"><span class="step-tag">A</span><h2 data-i18n="laneAssumption">가정</h2></div><p data-i18n="assumptionNote">사후확률은 가정의 진실성을 보장하지 않는다.</p><div id="assumption-detail"></div></article>
+  <article class="panel lane"><div class="section-heading"><span class="step-tag">I</span><h2 data-i18n="laneIntervention">다음 측정·개입</h2></div><p data-i18n="interventionNote">측정 전에 이유와 비용을 남긴다.</p><dl id="intervention-detail"></dl></article>
+  </section>
+  <section class="panel audit-panel"><div class="chart-heading"><h2 data-i18n="auditTitle">의사결정 추적</h2><button id="export-events" class="button subtle" type="button" data-i18n="exportEvents">이벤트 로그 저장</button></div><div class="table-wrap"><table><thead><tr><th data-i18n="step">단계</th><th data-i18n="condition">조건</th><th data-i18n="readout">측정</th><th data-i18n="intervention">개입</th><th data-i18n="fidelity">정밀도</th><th data-i18n="cost">비용</th><th data-i18n="reason">선택 이유</th></tr></thead><tbody id="decision-rows"></tbody></table></div><p class="field-note" data-i18n="hashNote">이벤트는 해시로 연결된다. 이는 변경 탐지용이며 디지털 서명이나 과학적 타당성 증명은 아니다.</p></section>
+</div></div></div>
+<section id="comparison" class="tab-panel" hidden><div class="panel comparison-panel"><div class="chart-heading"><div><h2 data-i18n="comparisonTitle">같은 비용 상한, 다른 정책</h2><p data-i18n="comparisonNote">전체 시드의 최종 결과를 함께 본다. 조기 중단을 성공적인 비용 절감으로 해석하지 않는다.</p></div><select id="comparison-scenario" aria-label="Comparison scenario"></select></div><div class="table-wrap"><table><thead><tr><th data-i18n="policy">정책</th><th data-i18n="operator">관측 연산자</th><th>N</th><th data-i18n="latentRMSE">잠재 RMSE 평균 ± SD</th><th data-i18n="coverage">관측 포함률</th><th data-i18n="trainingCost">학습 비용</th><th data-i18n="totalCost">총 측정 비용</th><th data-i18n="targetPass">최종 목표 충족</th><th data-i18n="assumptionStop">가정 오류 중단</th></tr></thead><tbody id="comparison-rows"></tbody></table></div><p class="field-note" id="comparison-detail"></p><div class="comparison-footer"><a href="research/results/pilot/summary.json" class="button subtle" data-i18n="rawSummary">전체 요약 JSON</a><a href="research/docs/ko/11_PILOT_RESULTS.md" id="results-link" class="button" data-i18n="resultsReport">결과 해석 읽기</a></div></div></section>
+<section id="direction" class="tab-panel" hidden><div class="direction-intro"><h2 data-i18n="directionTitle">구현된 부분과 남은 연구를 구분한다</h2><p data-i18n="directionNote">기존 01~08 연구 문서는 보존되어 있다. 이 실험실은 방향을 검토하는 추가 모듈이며 전체 계획의 완료를 뜻하지 않는다.</p></div><div id="agenda-cards" class="agenda-grid"></div><div class="panel next-question"><p class="eyebrow">NEXT RESEARCH QUESTION</p><h2 data-i18n="nextQuestion">잘못된 가정을 언제 알아차리고, 다음에 무엇을 측정해야 하는가?</h2><p data-i18n="nextNote">더 복잡한 모델보다 먼저, 가정 탐지의 누락·오경보와 측정 비용의 균형을 검증한다. 실제 데이터 replay와 prospective 실험은 별도 단계다.</p><a id="roadmap-link" href="research/docs/ko/12_RESEARCH_DIRECTION.md" class="text-link" data-i18n="roadmap">반증 조건과 다음 실험 보기 ↗</a></div></section>
+<p id="status-message" role="status" aria-live="polite"></p>
+</main>
+<footer><span>Data-Efficient-Bio-Neuro-Research</span><span data-i18n="footer">기존 연구 보존 · 합성 증거 분리 · 실패 결과 공개</span></footer>
+<script src="lab/data/pilot-data.js"></script><script src="lab/js/i18n.js"></script><script src="lab/js/lab.js"></script>
+</body>
+</html>

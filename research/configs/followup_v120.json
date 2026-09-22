@@ -1,0 +1,61 @@
+{
+  "version": "1.2.0-research.1",
+  "scope": "diagnostic research A and B; synthetic only; no biological training",
+  "alpha": 0.05,
+  "looks": [
+    12.0,
+    24.0,
+    36.0
+  ],
+  "fit_budget": 36.0,
+  "calibration_worlds": 2000,
+  "normal_detection_worlds": 1000,
+  "fault_detection_worlds_per_scenario": 100,
+  "acquisition_worlds_per_scenario": 32,
+  "development_worlds_per_scenario": 4,
+  "scenarios": [
+    "normal",
+    "gain_offset",
+    "mechanism",
+    "noise_scale",
+    "combined",
+    "nonlinear_sensor",
+    "heteroscedastic",
+    "heavy_tail",
+    "local_bump",
+    "reference_mismatch"
+  ],
+  "policies": [
+    "random",
+    "reference_first",
+    "joint_information",
+    "block_targeted",
+    "no_reference",
+    "reference_first_no_audit"
+  ],
+  "detectors": [
+    "naive",
+    "bonferroni",
+    "calibrated_max"
+  ],
+  "live_policy_detector": "bonferroni",
+  "effect_selection": "fixed ranges in worlds.py; not tuned to evaluation outcomes",
+  "evaluation_basis": [
+    "tanh",
+    "cubic"
+  ],
+  "development_and_calibration_basis": [
+    "linear"
+  ],
+  "stopping": "main policy runs complete budget; stop counterfactual evaluated at pre-frozen prefixes only",
+  "hypotheses": {
+    "F1": "finite-look correction reduces all-null false warning versus naive repeated p<0.05",
+    "F2": "reference measurements plus observation-aware inference resolve within-model gain/offset confounding better than no-reference acquisition",
+    "F3": "block-targeted acquisition is compared, not presumed superior, to two-point-calibration then balanced sampling at equal cap",
+    "F4": "propagating calibration and estimated noise changes interval calibration on same acquired records",
+    "F5": "fixed audit panels can miss localized or non-transportable faults; warning is not source certification"
+  },
+  "analysis": "world-level descriptive bootstrap intervals; no multiplicity-adjusted superiority tests; paired policy comparisons",
+  "detection_index_offset": 10000,
+  "acquisition_index_offset": 20000
+}

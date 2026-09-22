@@ -1,0 +1,93 @@
+{
+  "created_at_utc": "2026-09-22T03:16:30.503830+00:00",
+  "status": "local-protocol-lock-before-evaluation-not-independent-preregistration",
+  "fingerprint": {
+    "config": "17c9f5eac63b814f6a3dc78b3c0d9c6ea16934d8f2ce01662c513945f1859c31",
+    "sources": {
+      "research/diagnostic_loop/__init__.py": "e068e15f243feec760f7704232b97709ceb3077ba16c9b1c622268cde8e26ea1",
+      "research/diagnostic_loop/__main__.py": "12bbd9d850adfcea966c29c0144de80d2a60df5c2004f528c7971a1201513c3c",
+      "research/diagnostic_loop/contracts.py": "492cd9f679a358fb3b207a23139b61fdb07414485feec12a1999868b668206d8",
+      "research/diagnostic_loop/design.py": "98c114a2ea2d1bbf78d5e7fb0c363bbdf13388de53cbde746df91b1566ca9a15",
+      "research/diagnostic_loop/diagnostics.py": "3e333df3f1680f9aa5181ac8ee2f82bfdb39ee523f80af23c1e07ef0a0c89437",
+      "research/diagnostic_loop/inference.py": "071c057aa221c289c420a0211c6079b1d0b705c168d02db2067d09c08ae04b6b",
+      "research/diagnostic_loop/runner.py": "4af3b1e16c3df516b25a30432bb874210f7d5e9d427d3b3a5f0e2dcd36bb1386",
+      "research/diagnostic_loop/study.py": "efc18fa0d0844a80c6d25f81711a38ab956af13f45642fef4a798c80fccdf043",
+      "research/diagnostic_loop/worlds.py": "5112ad7759eeaed14a8788abde7b90714a72fabc9164c02456d59bab5a369c4c",
+      "research/closed_loop/contracts.py": "1eeb73517f76a8872563b8913e9f8e27937159e55862cef98162cb903370024b"
+    }
+  },
+  "config": {
+    "version": "1.2.0-research.1",
+    "scope": "diagnostic research A and B; synthetic only; no biological training",
+    "alpha": 0.05,
+    "looks": [
+      12.0,
+      24.0,
+      36.0
+    ],
+    "fit_budget": 36.0,
+    "calibration_worlds": 2000,
+    "normal_detection_worlds": 1000,
+    "fault_detection_worlds_per_scenario": 100,
+    "acquisition_worlds_per_scenario": 32,
+    "development_worlds_per_scenario": 4,
+    "scenarios": [
+      "normal",
+      "gain_offset",
+      "mechanism",
+      "noise_scale",
+      "combined",
+      "nonlinear_sensor",
+      "heteroscedastic",
+      "heavy_tail",
+      "local_bump",
+      "reference_mismatch"
+    ],
+    "policies": [
+      "random",
+      "reference_first",
+      "joint_information",
+      "block_targeted",
+      "no_reference",
+      "reference_first_no_audit"
+    ],
+    "detectors": [
+      "naive",
+      "bonferroni",
+      "calibrated_max"
+    ],
+    "live_policy_detector": "bonferroni",
+    "effect_selection": "fixed ranges in worlds.py; not tuned to evaluation outcomes",
+    "evaluation_basis": [
+      "tanh",
+      "cubic"
+    ],
+    "development_and_calibration_basis": [
+      "linear"
+    ],
+    "stopping": "main policy runs complete budget; stop counterfactual evaluated at pre-frozen prefixes only",
+    "hypotheses": {
+      "F1": "finite-look correction reduces all-null false warning versus naive repeated p<0.05",
+      "F2": "reference measurements plus observation-aware inference resolve within-model gain/offset confounding better than no-reference acquisition",
+      "F3": "block-targeted acquisition is compared, not presumed superior, to two-point-calibration then balanced sampling at equal cap",
+      "F4": "propagating calibration and estimated noise changes interval calibration on same acquired records",
+      "F5": "fixed audit panels can miss localized or non-transportable faults; warning is not source certification"
+    },
+    "analysis": "world-level descriptive bootstrap intervals; no multiplicity-adjusted superiority tests; paired policy comparisons",
+    "detection_index_offset": 10000,
+    "acquisition_index_offset": 20000
+  },
+  "calibration_sha256": "fae417110982fd06b85f995692a4c908343340bb3e9ee5f809cceca01400d1b2",
+  "thresholds": {
+    "naive": 0.05,
+    "bonferroni": 0.004166666666666667,
+    "calibrated_max": 0.004748546939220483
+  },
+  "n_development": 40,
+  "n_calibration": 2000,
+  "truth_namespace_disjoint": true,
+  "basis_supplied_to_model": true,
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41"
+}
