@@ -57,14 +57,3 @@ python -m unittest discover -s tests -v
 ## Publication and rights
 
 No third-party paper PDFs, datasets or model weights are included. A repository-wide public license is [not yet selected](LICENSE.md), leaving that decision to the owner. See [citation guidance](CITATION.md), [third-party notices](THIRD_PARTY_NOTICES.md), and [validation scope](quality/QA.md). Add accurate owner/author information before publication; do not label the proposed architecture a proved new theory.
-
-
----
-
-## Executable research extension
-
-**1.1.0-research.1 · synthetic-only slice 0.1.0**
-
-The original plan above is preserved. The same repository now adds an executable observation–assumption–intervention loop, bilingual review UI, 640 synthetic comparisons and negative results. This is not a production biological model or validation of the full agenda.
-
-[Extension and setup](RESEARCH_LAB.md) · [Implementation](docs/en/09_EXECUTABLE_RESEARCH.md) · [Actual results](docs/en/10_PILOT_RESULTS.md) · [Next research](docs/en/11_NEXT_RESEARCH.md)

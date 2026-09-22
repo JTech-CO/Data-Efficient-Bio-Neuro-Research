@@ -1,0 +1,74 @@
+{
+  "experiment_id": "synthetic-pilot-0.1.0",
+  "status": "execution_plan_not_external_preregistration",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "scenarios": [
+    "identifiable",
+    "observational_equivalence",
+    "hidden_mechanism",
+    "sensor_shift",
+    "noise_shift"
+  ],
+  "policies": [
+    "random",
+    "space_filling",
+    "max_variance",
+    "model_information",
+    "guarded_information"
+  ],
+  "budget": 24.0,
+  "audit_every": 3,
+  "audit_z": 2.5,
+  "audit_hits": 2,
+  "audit_window": 3,
+  "exploration_every": 4,
+  "parameter_weight": 0.15,
+  "decision_threshold": 0.95,
+  "quadrature_nodes": 20,
+  "ablations": {
+    "scenarios": [
+      "identifiable",
+      "hidden_mechanism",
+      "sensor_shift"
+    ],
+    "policies": [
+      "guarded_no_gate",
+      "guarded_no_exploration"
+    ],
+    "identity_observer_scenario": "identifiable"
+  },
+  "hypotheses": [
+    "H1 restricted model-discrimination prototype",
+    "H2 correct-versus-identity observation ablation"
+  ],
+  "not_tested": [
+    "H3 generative augmentation",
+    "H4 hierarchical biological effects",
+    "H5 multi-fidelity",
+    "H6 conformal guarantees"
+  ],
+  "budget_unit": "synthetic assay cost, not currency",
+  "bootstrap_unit": "independent simulated world seed",
+  "split": "training labels for fit; audit labels for alert only; final held-out/OOD labels post-run only"
+}

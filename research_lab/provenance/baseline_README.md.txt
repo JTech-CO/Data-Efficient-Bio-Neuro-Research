@@ -57,14 +57,3 @@ python -m unittest discover -s tests -v
 ## 출판과 권리
 
 원논문 PDF·데이터·모델 가중치는 포함하지 않았다. 본 패키지의 공개 라이선스는 사용자가 결정할 수 있도록 [선택 전 상태](LICENSE.md)로 두었다. [인용 안내](CITATION.md), [제3자 자료 안내](THIRD_PARTY_NOTICES.md), [검증 범위](quality/QA.md)를 확인한다. GitHub에 올릴 때 저장소 소유자·저자 정보를 추가하되, 본 설계가 새 이론으로 입증되었다고 표시하지 않는다.
-
-
----
-
-## 실행 가능한 연구 추가 단계 / Executable research extension
-
-**1.1.0-research.1 · synthetic-only slice 0.1.0**
-
-기존 연구 계획은 위 내용대로 보존한다. 같은 저장소에 관측·가정·개입을 분리하는 실행 가능한 연구 루프, 한·영 검토 UI, 640회 합성 비교와 부정 결과를 추가했다. 생물학적 프로덕션 모델이나 전체 가설의 검증 완료가 아니다.
-
-[연구 추가 자료 및 실행 방법](RESEARCH_LAB.md) · [실행 문서](docs/ko/09_EXECUTABLE_RESEARCH.md) · [실제 결과](docs/ko/10_PILOT_RESULTS.md) · [다음 연구 방향](docs/ko/11_NEXT_RESEARCH.md)
