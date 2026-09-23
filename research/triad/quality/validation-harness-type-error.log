@@ -1,0 +1,44 @@
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/concurrent/futures/process.py", line 254, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/usr/lib/python3.13/concurrent/futures/process.py", line 203, in _process_chunk
+    return [fn(*args) for args in chunk]
+            ~~^^^^^^^
+  File "/mnt/data/triad/Data-Efficient-Bio-Neuro-Research/research/triad/validate_triad.py", line 25, in replay
+    if r['study']=='D': fresh=transfer.run(*kw,r['protocol'],r['costs']['fit'])
+                              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/triad/Data-Efficient-Bio-Neuro-Research/research/triad_loop/transfer.py", line 156, in run
+    for k,x,d,cost,sd in planned_actions(protocol,budget): c.take(k,x,delta=d,cost=cost,sd=sd)
+                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/triad/Data-Efficient-Bio-Neuro-Research/research/triad_loop/transfer.py", line 60, in planned_actions
+    if protocol not in PROTOCOLS or type(budget)!=int or budget<40 or budget>200: raise ValueError('Protocol or budget invalid')
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Protocol or budget invalid
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/data/triad/Data-Efficient-Bio-Neuro-Research/research/triad/validate_triad.py", line 60, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/mnt/data/triad/Data-Efficient-Bio-Neuro-Research/research/triad/validate_triad.py", line 40, in main
+    with ProcessPoolExecutor(max_workers=4) as pool: done=list(pool.map(replay,paths,chunksize=6))
+                                                          ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/concurrent/futures/process.py", line 617, in _chain_from_iterable_of_lists
+    for element in iterable:
+                   ^^^^^^^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: Protocol or budget invalid
